@@ -1,0 +1,636 @@
+*
+    padding: 0
+    margin: 0
+    border: 0
+
+*, *before, *after
+    -moz-box-sizing: border-box
+    -webkit-box-sizing: border-box
+    box-sizing: border-box
+
+:focus, :active
+    outline: none
+
+a:focus, a:active
+    outline: none
+
+nav, footer, header, aside
+    display: block
+
+html, body
+    font-family: Montserrat
+    height: 100%
+    width: 100%
+    line-height: 1
+    font-size: 16px
+    -ms-text-size-adjust: 100%
+    -moz-text-size-adjust: 100%
+    -webkit-text-size-adjust: 100%
+
+input, button, textarea
+    font-family: inherit
+
+input::-ms-clear
+    display: none
+
+button
+    cursor: pointer
+
+button::-moz-focus-inner
+    padding: 0
+    border: 0
+
+a, a:visited
+    text-decoration: none
+
+a:hover
+    text-decoration: none
+
+ul, li, ol
+    list-style-type: none
+
+img
+    vertical-align: top
+
+h1, h2, h3, h4, h5, h6
+    font-style: inherit
+    font-weight: 400
+
+/*-----------------------------------------------------------------*/
+    
+.wrapper
+    min-height: 100%
+    overflow: hidden
+
+.container 
+    max-width: 1200px
+    margin: 0 auto
+    padding: 0 10px
+    box-sizing: content-box
+
+.button
+    background: #F6A6BF
+    font-size: 18px
+    font-weight: 400
+    padding: 18px 26px
+    line-height: 140%
+    border-radius: 100px
+    border: 1px solid #F6A6BF
+    color: #fff
+    transition: all 0.3s ease 0s
+    &:hover
+        background: #fff
+        color: #F6A6BF
+    &:active
+        background: #f9588b
+
+        
+
+/*-----------------------------HEADER-------------------------------*/
+
+.header 
+    position: fixed
+    width: 100%
+    top: 0
+    left: 0
+    z-index: 50
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: #fff
+        z-index: 2
+
+.header__logo 
+    padding: 0 20px 0 0
+    flex: 0 0 167px
+    position: relative
+    z-index: 3
+    & img
+        display: block
+        max-width: 100%
+
+.header__body 
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 20px 0
+    position: relative
+
+.header__bottom
+    position: relative
+    border-bottom: 1px solid #F6A6BF
+    z-index: 2
+
+.header__burger
+    display: none
+
+.header__list 
+    color: #111
+    font-weight: 600
+    font-size: 16px
+    line-height: 100%
+    display: flex
+    position: relative
+    z-index: 2
+    & li
+        &:not(:last-child)
+        margin: 0 40px 0 0 
+    
+.header__li
+    color: inherit
+    transition: all 0.2s ease 0s
+    &:hover
+        color: #F6A6BF
+
+.content
+    padding: 100px 0 0 0 
+
+@media (max-width: 992px)
+    .header__logo 
+        flex: 0 0 137px
+    .header__list li
+        &:not(:last-child)
+        margin: 0 20px 0 0 
+    .header__list 
+        font-size: 14px        
+
+@media (max-width: 767px)
+    body.lock
+        overflow: hidden
+    .header__body 
+        height: 70px
+    .header__logo 
+        flex: 0 0 140px
+    .header__burger
+        display: block
+        position: relative
+        width: 30px
+        height: 20px
+        z-index: 3
+    .header__burger::before
+        content: ''
+        background-color: #F6A6BF
+        position: absolute
+        width: 100%
+        height: 2px
+        left: 0
+        top: 0
+    .header__burger::after
+        content: ''
+        background-color: #F6A6BF
+        position: absolute
+        width: 100%
+        height: 2px
+        left: 0
+        bottom: 0
+    .header__burger span
+        position: absolute
+        background-color: #F6A6BF
+        left: 0
+        width: 100%
+        height: 2px
+        top: 9px
+    .header__burger.active::before
+        transform: rotate(45deg)
+        top: 9px
+    .header__burger.active::after
+        transform: rotate(-45deg)
+        bottom: 9px
+    .header__burger.active span
+        transform: scale(0) 
+    .header__menu 
+        position: fixed
+        top: -100%
+        left: 0
+        transition: all 0.3s ease 0s
+        overflow: auto
+        width: 100%
+        height: 100%
+        background-color: #F6A6BF
+        padding: 90px 10px 20px 10px
+    .header__menu.active
+        top: 0
+    .header__list 
+        font-size: 20px
+        color: #fff
+        text-transform: uppercase
+        display: block
+        & li
+            margin: 0 0 20px 0 
+    .content
+        padding: 80px 0 0 0 
+
+.text
+    padding: 10px 0 0 0 
+
+/*---------------------MAIN-TOP---------------------*/
+
+.main__top-body
+    display: flex
+    justify-content: center
+    padding: 15px
+    flex-wrap: wrap
+
+.main__top-item 
+    display: flex
+    justify-content: center
+    align-items: center
+    max-width: 180px
+    font-weight: 600
+    font-size: 13px
+    line-height: 100%
+    &:not(:last-child)
+        margin: 0 40px 0 0
+
+.main__top-item img
+    margin: 0 8px 0 0
+
+@media (max-width: 600px)
+    .main__top-body
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        text-align: center
+    .main__top-item 
+        flex-direction: column
+        &:not(:last-child)
+            margin: 0 0 20px 0
+    .main__top-item img
+        margin: 0 0 10px 0
+
+a
+    color: inherit
+
+/*-------------------------------main-block-------------------*/
+    
+.main__background 
+    width: 100%
+    height: 500px
+    background: url('../img/main_block/background.png') right bottom no-repeat
+    
+.main__body 
+    padding: 35px 0 29px 0
+    height: 100%
+    display: flex
+    flex-direction: column
+
+.main__img-mobile
+    display: none
+    width: 300px
+
+.main__title
+    font-size: 48px
+    font-weight: 600
+    line-height: 122%
+    margin: 0 0 30px 0
+
+.main__text
+    font-weight: 500
+    font-size: 20px
+    line-height: 150%
+    margin: 0 0 40px 0
+
+.main__input
+    color: #848484
+    padding: 0 0 12px 0
+    margin: 0 0 30px 0
+    max-width: 230px
+    border-bottom: 1px solid #111
+
+.main__button
+    
+@media (max-width: 1100px)
+    .main__title
+        font-size: 40px
+        margin: 0 0 15px 0
+    .main__text
+        font-size: 16px
+        margin: 0 0 25px 0
+    .main__button .button
+        font-size: 16px
+        padding: 14px 22px
+    .main__input
+        max-width: 200px
+
+@media (max-width: 960px)
+    .main__background
+        background: url('../img/main_block/main_love_tablet.png') right bottom no-repeat
+        height: auto
+    .main__body 
+        align-items: center
+
+@media (max-width: 600px)
+    .main__background
+        background: none
+    .main__img-mobile
+        display: block
+        margin: 0 0 40px 0
+    .main__img-mobile img
+        max-width: 300px
+    .main__body 
+        padding: 10px 0 0px 0
+    .main__input
+        display: none
+    .main__button
+        display: none
+    .main__title
+        font-size: 35px
+    .main__text
+        text-align: center
+
+@media (max-width: 479px)
+    .main__title
+        font-size: 25px
+        line-height: 140%
+    .main__text
+        font-size: 20px
+
+/*--------------------info---------------------*/
+
+.main__info
+    
+.info 
+    
+.info__body
+    padding: 29px 0 65px 0
+    justify-content: center
+    display: flex
+    font-weight: 400
+    font-size: 16px
+    line-height: 140%
+    
+.info__item
+    display: flex
+    justify-content: center
+    align-items: center
+    max-width: 316px
+    &:not(:last-child)
+        margin: 0 75px 0 0
+
+.info__item img
+    width: 45px
+    height: 45px
+    margin: 0 20px 0 0 
+    
+.info__text
+    
+@media (max-width: 1100px)
+    .info__item
+        &:not(:last-child)
+            margin: 0 40px 0 0
+    .info__item img
+        margin: 0 12px 0 0 
+
+@media (max-width: 767px)
+    .info__body
+        align-items: start
+        flex-direction: column
+    .info__item
+        max-width: 100%
+        &:not(:last-child)
+            margin: 0 0 20px 0 
+
+@media (max-width: 600px)
+    .info__body
+        padding: 10px 0 65px 0 
+    
+@media (max-width: 479px)
+
+/*--------------------CATALOG-----------------------*/
+
+.catalog
+    //margin: 0 0 170px 0
+
+.catalog__top
+    display: flex
+    align-items: center
+    margin: 0 0 28px 0
+
+.title
+    flex: 0 0 50%
+    & h2
+        font-weight: 600
+        font-size: 40px
+        line-height: 122%
+
+.catalog__body 
+    display: flex
+    margin: 0 auto
+    max-width: 1200px
+    justify-content: space-between
+    flex-wrap: wrap
+
+.catalog__column
+    max-width: 380px
+    border: 1px solid #F6A6BF
+
+@media(max-width: 1220px)
+    .catalog__body 
+        max-width: 790px
+    .catalog__column
+        margin: 0 0 40px 0
+    .catalog
+        margin: 0 0 130px 0
+
+@media(max-width: 810px)
+    .catalog__body 
+        max-width: 380px
+
+@media(max-width: 600px)
+    .catalog__top
+        align-items: start
+        flex-direction: column
+    .catalog__title
+        width: 100%
+        margin: 0 0 50px 0
+    .catalog__img
+        width: 100%
+        text-align: center
+        
+
+.catalog__column button
+    width: 100%
+    
+.slider
+    width: 380px
+    height: 500px
+    position: relative
+    overflow: hidden
+    
+.catalog__slider-img  
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    opacity: 0
+    transition: opacity 0.5s ease  
+
+.catalog__slider-img.active
+    opacity: 1
+
+.catalog__controlls
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    z-index: 1
+    height: 50px
+    cursor: pointer
+
+.slider .prev
+    left: 10px
+
+.slider .next
+    right: 10px
+    
+.prev 
+    
+.catalog__controlls 
+    
+.next
+
+.catalog__content
+    display: flex
+    flex-direction: column
+    padding: 20px 20px 30px 20px
+
+.catalog__column-describe 
+    
+.describe 
+    display: flex
+    flex-direction: column
+    height: 100%
+
+.describe__row
+    display: flex
+    text-align: left
+    &:first-child
+        align-items: end
+        margin: 0 0 40px 0
+    &:nth-child(2)
+        margin: 0 0 25px 0
+    &:nth-child(3)
+        margin: 0 0 40px 0
+    
+.describe__title 
+    flex: 0 0 50%
+    color: #F6A6BF
+    font-weight: 600
+    font-size: 20px
+    line-height: 140%
+    
+.describe__text 
+    flex: 0 0 50%
+    color: #848484
+    font-weight: 400
+    font-size: 16px
+    line-height: 140%
+
+.describe__price 
+    font-weight: 500
+    font-size: 20px
+    line-height: 150%
+    color: #242424
+    
+.describe__text-size 
+    flex: 0 0 50%
+    color: #242424
+    font-weight: 400
+    font-size: 16px
+    line-height: 140%
+
+@media(max-width: 479px)
+    .catalog__column
+        max-width: 300px
+    .slider
+        width: 300px
+        height: 395px
+    .catalog__body 
+        max-width: 300px
+    .catalog__title h2
+        font-size: 20px
+        line-height: 122%
+    .describe__row
+        flex-direction: column
+        &:first-child
+            align-items: start   
+            margin: 0 0 19px 0 
+        &:nth-child(2)
+            margin: 0 0 20px 0
+    .describe__title 
+        margin: 0 0 13px
+    .describe__text 
+        margin: 0 0 5px 0
+        
+/*----------------------condition---------------------*/
+
+.conditions 
+    //background: url("../img/conditions/01.png") top left no-repeat
+.conditions__title
+    margin: 170px 0 70px 0
+
+.sub_title
+    font-size: 26px
+    font-weight: 600
+    line-height: 140%
+    
+.important
+    margin: 0 0 40px 0
+
+.conditions__text-light
+    font-size: 20px
+    font-weight: 500
+    line-height: 150%
+    color: #848484
+    margin: 30px 0 0 0
+
+.conditions__text-dark
+    font-size: 16px
+    font-weight: 400
+    line-height: 140%
+    color: #242424
+
+.conditions__body 
+    display: flex
+    flex-direction: column
+
+.conditions__row 
+    display: flex
+    border-top: 1px solid #F6A6BF
+
+.conditions__column 
+    flex: 1 1 50%
+    margin: 40px 0px 30px 0
+    &:not(:last-child)
+        margin: 40px 130px 30px 0
+
+
+.conditions__list ul li 
+    background: url("../img/conditions/list.svg") no-repeat
+    padding: 0 0 0 20px
+    font-size: 16px
+    line-height: 140%
+    color: #242424
+    &:not(:last-child)
+        margin: 0 0 15px 0
+
+.important-list ul li
+    background: url("../img/conditions/list.svg") left center no-repeat
+    padding: 0 0 0 30px
+    &:not(:last-child)
+        margin: 0 0 20px 0
+
+.conditions__img
+    height: 100%
+    width: 100%
+    transform: rotate(174) 
+    
+
+
+
+
+    
